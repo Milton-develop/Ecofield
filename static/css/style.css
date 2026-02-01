@@ -79,6 +79,7 @@ body{
   border-radius: 6px;
   transition: background 0.2s ease;
   margin-left: 20px;
+  margin-top: 7px;
 }
 
 .btn:hover {
