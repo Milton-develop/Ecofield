@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Admin Login</title>
+</head>
+<body>
+  <div class="header">
+    <h1 class="text">Admin Login</h1>
+    <p>Enter your password to access archives and manage groups</p>
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+  </div>
+
+  <main>
+    <form action="/admin/login" method="POST" class="form-container">
+      <label for="admin_password">Admin Password</label>
+      <input type="password" name="admin_password" id="admin_password" placeholder="Enter Admin Password" required>
+
+      <button type="submit" class="btn1">Login</button>
+    </form>
+  </main>
+</body>
+</html>

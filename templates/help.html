@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}">
+  <title>EcoField Logger – Help</title>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">EcoField Logger</a>
+      <div class="nav-links">
+        <a href="/">Log</a>
+        <a href="/group">Data</a>
+        <a href="/manage_groups">Admin</a>
+        <a href="/help" class="active">Help</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <h1 class="text">Help & Instructions</h1>
+    <p>How to use EcoField Logger effectively during fieldwork</p>
+  </div>
+
+  <!-- ===== HELP CONTENT ===== -->
+  <main class="help-container">
+
+    <section>
+      <h2>Logging Observations</h2>
+      <ul>
+        <li>Go to the <strong>Log</strong> page.</li>
+        <li>Fill in all required fields accurately.</li>
+        <li>Use the correct <strong>Group ID</strong> assigned to your group.</li>
+        <li>Click <strong>Submit Observation</strong> to save your entry.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Viewing Group Data (Data Page)</h2>
+      <ul>
+        <li>Click <strong>Data</strong> in the navbar.</li>
+        <li>Enter your <strong>Group ID</strong> and <strong>Password</strong> to log in.</li>
+        <li>Only your group’s observations will be visible.</li>
+        <li>You can <strong>Logout</strong> to end your session; this resets the page and requires password again.</li>
+        <li>After fieldwork, data can be archived by the admin for reuse of group IDs next year.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Downloading Group Data</h2>
+      <ul>
+        <li>After logging in, click <strong>Download Filtered CSV</strong>.</li>
+        <li>Only your group’s data will be downloaded.</li>
+        <li>The file is saved in <strong>CSV format</strong> for easy analysis.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Using the Eco-Stats Dashboard</h2>
+<ul>
+    <li><strong>Access:</strong> Click the <strong>Eco-Stats Dashboard</strong> link above the form to open the visualization tool.</li>
+    <li><strong>Live Analysis:</strong> The dashboard automatically reads your submitted logs and updates charts in real-time.</li>
+    <li><strong>Key Metrics:</strong>
+        <ul>
+            <li><strong>Simpson's Index:</strong> Automatically calculates biodiversity (0 to 1 scale) to determine ecosystem health.</li>
+            <li><strong>Habitat Comparison:</strong> View side-by-side graphs comparing species abundance in Forests, Grasslands, etc.</li>
+        </ul>
+    </li>
+    <li><strong>Troubleshooting:</strong> If the dashboard is empty, ensure you have submitted at least one observation in the Logger first.</li>
+</ul>
+    </section>
+
+    <section>
+      <h2>Managing Groups (Admin Only)</h2>
+      <ul>
+        <li>The <strong>Admin Dashboard</strong> allows adding new group IDs and passwords.</li>
+        <li>Admins can archive data at the end of fieldwork to allow reuse of group numbers next year.</li>
+        <li>All credentials are stored securely in <code>groups.csv</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Double-check species names for accuracy.</li>
+        <li>Use the notes field for behavior or unusual sightings.</li>
+        <li>Submit observations promptly after fieldwork.</li>
+        <li>Do not share your group password with other groups.</li>
+        <li>Admins should archive data only after the fieldwork period is complete.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>EcoField Logger • Built by MiltonPixel for field-based biological studies</p>
+  </footer>
+
+</body>
+</html>

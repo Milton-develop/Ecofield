@@ -1,0 +1,270 @@
+body{
+    color: #2e7d32;
+}
+
+/* ===== NAV BAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.6rem 1rem;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* App name / logo */
+.nav-brand {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2e7d32;
+  text-decoration: none;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #374151;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover */
+.nav-links a:hover {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+/* Active page */
+.nav-links a.active {
+  background-color: #2e7d32;
+  color: #ffffff;
+}
+
+.image{
+    width: 96%;
+    padding: 20px;
+    opacity: 0.9;
+}
+
+.text{
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    padding-left: 50px;
+    color: white;
+    line-height: 2.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #2e7d32;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  margin-left: 20px;
+}
+
+.btn:hover {
+  background-color: #1b5e20;
+}
+
+/* ===== Form Container ===== */
+.form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #2e7d32; /* soft off-white for calm feel */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* vertical spacing between fields */
+}
+
+/* ===== Labels ===== */
+.form-container label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  color: white;
+}
+
+/* ===== Inputs & Selects ===== */
+.form-container input,
+.form-container select,
+.form-container textarea {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  width: 90%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 2px rgba(46,125,50,0.15);
+}
+
+/* ===== Textarea ===== */
+.form-container textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== Placeholder text ===== */
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* ===== Submit Button (optional if you add one) ===== */
+.form-container .btn1 {
+  background-color: #ffffff;
+  color: #2e7d32;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-container .btn:hover {
+  background-color: #f5f3f3;
+}
+
+option{
+    background-color: #2e7d32;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .form-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  .text{
+    position: absolute;
+    top: 20%;
+    padding-left: 40px;
+    color: white;
+    line-height: 1.6;
+}
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-links a {
+    flex: 1;
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+  }
+}
+
+/* ===== TABLE STYLES (DATA PAGE) ===== */
+.table-container {
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+thead {
+    background-color: #1b5e20;
+    color: white;
+}
+
+thead th {
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+tbody td {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #e0f2f1;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f8f3;
+}
+
+tbody tr:hover {
+    background-color: #dcedc8;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background-color: #1b5e20;
+    color: #e8f5e9;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        margin-left: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .header .text {
+        font-size: 1.0rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+}

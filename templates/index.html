@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>EcoField Logger</title>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">EcoField Logger</a>
+      <div class="nav-links">
+        <a href="/" class="active">Log</a>
+        <a href="/group">Data</a>
+        <a href="/help">Help</a>
+        <a href="/manage_groups">Admin</a>
+        <!-- <a href="/admin/archive">Archive</a> -->
+        <a href="/admin/view_archive">Archive</a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <img src="/static/images/header.jpg" alt="Students collecting data in the field" class="image">
+    <h1 class="text">Designed for fieldwork in the <br> Department of Biological Sciences</h1>
+  </div>
+
+  <!-- ===== CALL TO ACTION ===== -->
+  <div class="cta">
+    <a href="#form" class="btn" id="btn">Start Logging</a>
+      <a href="{{ url_for('go_to_stats') }}" class="btn">EcoField Stats Dashboard</a>
+  </div>
+
+
+  <!-- ===== FORM ===== -->
+  <main>
+    <form action="/" method="POST" class="form-container" id="form">
+      
+      <label for="year_group">Select Year Group</label>
+      <select name="year_group" id="year_group" required>
+        <option value=""></option>
+        <option value="Lv200">Level 200</option>
+        <option value="Lv300">Level 300</option>
+        <option value="Lv400">Level 400</option>
+      </select>
+
+      <label for="group_id">Group ID</label>
+      <input type="text" name="group_id" id="group_id" placeholder="Enter Your Group ID" class="input" required>
+
+      <label for="member_name">Your Name</label>
+      <input type="text" name="member_name" id="member_name" placeholder="Enter Your Name" class="input" required>
+
+      <label for="location">Location</label>
+      <input type="text" name="location" id="location" placeholder="Enter Your Location" class="input" required>
+
+      <label for="species">Species</label>
+      <input type="text" name="species" id="species" placeholder="Enter the Species Name" class="input" required>
+
+      <label for="count">Count</label>
+      <input type="number" name="count" id="count" placeholder="Number of Species" class="input" required>
+
+      <label for="habitat">Habitat Type</label>
+      <select name="habitat" id="habitat" required>
+        <option value=""></option>
+        <option value="grassland">Grassland</option>
+        <option value="forest">Forest</option>
+        <option value="rocky">Rocky</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="notes">Notes</label>
+      <textarea name="notes" id="notes" placeholder="Enter Your Notes"></textarea>
+
+      <button type="submit" class="btn1">Submit Observation</button>
+      <button type="reset" class="btn1">Clear Observation</button>
+    </form>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>EcoField Logger by MiltonPixel — Department of Biological Sciences (UG)</p>
+  </footer>
+
+
+  <script>
+    
+  </script>
+</body>
+</html>

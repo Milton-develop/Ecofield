@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Archived Data</title>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">EcoField Logger</a>
+      <div class="nav-links">
+        <a href="/" >Log</a>
+        <a href="/manage_groups">Admin</a>
+        <a href="/help">Help</a>
+        <a href="/logout" class="btn-logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <h1 class="text">Archived Data</h1>
+    <p>All archived observation files. Only admins can access this page.</p>
+  </div>
+
+  <!-- ===== ARCHIVE FILES TABLE ===== -->
+  <main>
+    {% if files %}
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Filename</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for file in files %}
+            <tr>
+              <td>{{ file }}</td>
+              <td>
+                <a href="{{ url_for('download_archive', filename=file) }}?admin_password={{ request.args.get('admin_password') }}" class="btn">Download</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p style="text-align:center; padding:2rem;">No archived files found.</p>
+    {% endif %}
+  </main>
+
+</body>
+</html>

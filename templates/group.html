@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/group.css') }}">
+  <title>My Group Data</title>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">EcoField Logger</a>
+      <div class="nav-links">
+        <a href="/">Log</a>
+        <a href="/view_group" class="active">Data</a>
+        <a href="/help">Help</a>
+        <a href="/logout" class="btn-logout">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <h1 class="text">Observations for Group {{ group_id }}</h1>
+    <p>All submitted observations for your group are shown below.</p>
+    <a href="/download_group" class="btn">Download Filtered CSV</a>
+  </div>
+
+  <!-- ===== TABLE ===== -->
+  <main>
+    {% if rows %}
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Year Group</th>
+              <th>Group ID</th>
+              <th>Member Name</th>
+              <th>Species</th>
+              <th>Count</th>
+              <th>Habitat</th>
+              <th>Location</th>
+              <th>Notes</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+            <tr>
+              <td>{{ row.year_group }}</td>
+              <td>{{ row.group_id }}</td>
+              <td>{{ row.member_name }}</td>
+              <td>{{ row.species }}</td>
+              <td>{{ row.count }}</td>
+              <td>{{ row.habitat }}</td>
+              <td>{{ row.location }}</td>
+              <td>{{ row.notes }}</td>
+              <td>{{ row.timestamp }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p style="text-align:center; padding:2rem;">No observations submitted yet.</p>
+    {% endif %}
+  </main>
+
+</body>
+</html>
