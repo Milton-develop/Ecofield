@@ -218,7 +218,7 @@ def group_logout():
 @app.route('/dashboard')
 def go_to_stats():
     # Redirect the user to the Streamlit port
-    return redirect("http://localhost:8502")
+    return redirect("https://milton-develop-ecofield-eco-stats-6k4jtq.streamlit.app/")
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
